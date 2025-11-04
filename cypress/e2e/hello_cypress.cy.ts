@@ -21,10 +21,10 @@ describe('Album Catalog - Basic Checks', () => {
     cy.get('[data-cy="album-card"]').should('have.length.at.least', 1);
   });
 
-  it('album card has a title and price', () => {
+  it('album card has a title and Date', () => {
     cy.get('[data-cy="album-card"]').first().within(() => {
       cy.get('[data-cy="album-title"]').should('be.visible');
-      cy.get('[data-cy="album-price"]').should('be.visible');
+      cy.get('[data-cy="album-date"]').should('be.visible');
     });
   });
 

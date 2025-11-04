@@ -9,6 +9,7 @@ describe('Album Catalog - Interactions', () => {
     cy.get('[data-cy="search-input"]').clear().type(q);
 
     cy.contains('a', 'Search').click();
+    cy.url().should('include', '/search');
   });
 
   it('navigates to the first album detail', () => {
@@ -75,5 +76,10 @@ describe('Album Catalog - Interactions', () => {
     });
 
     cy.url().should('match', /\/album\/\d+$/);;
+  });
+  it('shows error message if albom does not exist', () => {
+    cy.visit('/album/000');
+
+    cy.contains('div', 'Album not found').should('be.visible');
   });
 });

@@ -40,7 +40,7 @@ export default async function AlbumDetail({
   // if (album == null)
   if (album === null || album === undefined) {
     // throw new Error("Not Found");
-    return <div>Album not found</div>;
+    return <div data-cy="album_not_found">Album not found</div>;
   }
 
   const songs = await db

@@ -34,7 +34,7 @@ export default async function Home() {
                     {album.author_name}
                   </Link>
                 </p>
-                <p data-cy="album-price">
+                <p data-cy="album-date">
                   Release Date: {new Date(album.release_date).toDateString()}
                 </p>
                 <div className="mt-6">
